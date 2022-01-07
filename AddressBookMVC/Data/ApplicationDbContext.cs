@@ -1,0 +1,20 @@
+﻿using AddressBookMVC.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace AddressBookMVC.Data
+{
+    public class ApplicationDbContext : DbContext // inheritance fro DbContext adding: Using entity framework 
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
+        {
+            
+        }
+        public DbSet<Contact> Contacts { get; set; }
+
+    }
+
+}
